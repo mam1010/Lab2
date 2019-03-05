@@ -51,7 +51,7 @@ architecture testbench of ripple_adder_tb is
 		 A : in STD_LOGIC_VECTOR (3 downto 0);
          B : in STD_LOGIC_VECTOR (3 downto 0);
          C_in : in STD_LOGIC;
-         S : in STD_LOGIC_VECTOR (3 downto 0);
+         S : out STD_LOGIC_VECTOR (3 downto 0);
          C_out : out STD_LOGIC
 	);
 	end component;
@@ -61,8 +61,8 @@ begin
         counterA <= "0000";
         counterB <= "0000";
         tb_C_in <= '0';
-        for item in 1 to 15 loop 
-            for item in 1 to 15 loop
+        for item in 1 to 16 loop 
+            for item in 1 to 16 loop
                 wait for 4 ns;
                 tb_A <= counterA;
                 counterA <= std_logic_vector(unsigned(counterA) + 1);
@@ -74,8 +74,8 @@ begin
         counterA <= "0000";
         counterB <= "0000";
         tb_C_in <= '1';
-        for item in 1 to 15 loop 
-            for item in 1 to 15 loop
+        for item in 1 to 16 loop 
+            for item in 1 to 16 loop
                 wait for 4 ns;
                 tb_A <= counterA;
                 counterA <= std_logic_vector(unsigned(counterA) + 1);
