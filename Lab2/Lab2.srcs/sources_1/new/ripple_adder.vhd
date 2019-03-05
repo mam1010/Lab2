@@ -35,15 +35,15 @@ entity ripple_adder is
     Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
            B : in STD_LOGIC_VECTOR (3 downto 0);
            C_in : in STD_LOGIC;
-           S : in STD_LOGIC_VECTOR (3 downto 0);
+           S : out STD_LOGIC_VECTOR (3 downto 0);
            C_out : out STD_LOGIC);
 end ripple_adder;
 
 architecture rt1_structural of ripple_adder is
     component adder
     port(
-        a, b, c_in : std_logic;
-        s : in STD_LOGIC;
+        a, b, c_in : in std_logic;
+        s : out STD_LOGIC;
         c_out : out STD_LOGIC
     );
     end component;
